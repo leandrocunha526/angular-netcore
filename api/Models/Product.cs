@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System;
 
 namespace api.Models
 {
@@ -14,6 +15,12 @@ namespace api.Models
         public string Description {get;set;}
 
         [Required]
-        public float Price{get;set;}
+        public float Price {get;set;}
+
+        [Required]
+        public int Quantity {get;set;}
+
+        [Required]
+        public DateTime AquisitionDate {get;set;}
     }
 }
