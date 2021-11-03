@@ -1,1 +1,71 @@
-<p>add-product works!</p>
+<div class="container">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input
+        type="text"
+        class="form-control"
+        id="name"
+        required
+        [(ngModel)]="product.name"
+        name="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="name">Descrição</label>
+        <input
+        type="text"
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="product.description"
+        name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="name">Preço</label>
+        <input
+        type="number"
+        class="form-control"
+        id="price"
+        required
+        [(ngModel)]="product.price"
+        name="price"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="name">Quantidade</label>
+        <input
+        type="number"
+        class="form-control"
+        id="quantity"
+        required
+        [(ngModel)]="product.quantity"
+        name="quantity"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="name">Data de aquisição</label>
+        <input
+        type="date"
+        class="form-control"
+        id="aquisitionDate"
+        required
+        [(ngModel)]="product.aquisitionDate"
+        name="aquisitionDate"
+        />
+      </div>
+      <button (click)="createdProduct()" class="btn btn-success">Salvar</button>
+    </div>
+    <div *ngIf="submitted">
+      <h3>Você salvou com sucesso um produto</h3>
+      <button class="btn btn-success" (click)="newProduct()">Novo produto</button>
+    </div>
+  </div>
+</div>
