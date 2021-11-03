@@ -1,3 +1,4 @@
+import { ProductService } from 'src/app/services/product.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
-  constructor() { }
+  products: any;
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.readProducts();
   }
 
+  readProducts(): void {
+    this.productService.rendAll().subscribe(
+      products => {
+        this.products = products;
+      },
+      error => {
+        console.log(error);
+      });
+  }
+
+  refresh(): void {
+    this.readProducts();
+  }
+
+  deleteProduct(id: any){
+    this.productService.delete(id).subscribe(response => {
+      console.log(response);
+    },
+    error => {
+      console.log(error);
+    });
+  }
 }
