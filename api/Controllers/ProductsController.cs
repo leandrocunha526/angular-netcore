@@ -51,7 +51,7 @@ namespace api.Controllers
             return BadRequest();
         }
 
-        [HttpPut("/edit/{ProductId}")]
+        [HttpPut("edit/{ProductId}")]
         public async Task<IActionResult> Put(int ProductId, Product model){
             try {
                 var product = await _repository.GetProductAsyncById(ProductId);
