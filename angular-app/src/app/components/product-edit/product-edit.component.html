@@ -1,1 +1,66 @@
-<p>product-edit works!</p>
+<div class="container">
+<div *ngIf="currentProduct" class="edit-form">
+  <h1>Editar produto de nome: {{currentProduct.name}} de código {{currentProduct.id}}</h1>
+
+  <div class="form-group">
+    <label for="name">Nome</label>
+    <input
+     type="text"
+     class="form-control"
+     id="name"
+     [(ngModel)]="currentProduct.name"
+     value="currentProduct.name"
+     name="name"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Descrição</label>
+    <input
+     type="text"
+     class="form-control"
+     id="description"
+     [(ngModel)]="currentProduct.description"
+     value="currentProduct.description"
+     name="description"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="price">Preço</label>
+    <input
+     type="number"
+     class="form-control"
+     id="price"
+     [(ngModel)]="currentProduct.price"
+     value="currentProduct.price"
+     name="price"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="quantity">Quantidade</label>
+    <input
+     type="number"
+     class="form-control"
+     id="quantity"
+     [(ngModel)]="currentProduct.quantity"
+     value="currentProduct.quantity"
+     name="quantity"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="aquisitionDate">Data de aquisição</label>
+    <input
+     type="date"
+     class="form-control"
+     id="aquisitionDate"
+     [(ngModel)]="currentProduct.aquisitionDate"
+     value="currentProduct.aquisitionDate"
+     name="aquisitionDate"
+    />
+  </div>
+  <button type="submit" class="btn btn-success" (click)="updateProduct(currentProduct.id)">Atualizar</button>
+</div>
+</div>
