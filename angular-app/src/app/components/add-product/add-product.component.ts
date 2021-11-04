@@ -9,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class AddProductComponent implements OnInit {
   product = {
     name: "",
-    description: '',
-    price: '',
-    quantity: '',
-    aquisitionDate: ''
+    description: "",
+    price: "",
+    quantity: "",
+    aquisitionDate: ""
   }
   submitted = false;
 
